@@ -76,3 +76,13 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+# Starter contend
+Content/StarterContent/*
+
+# omit BattleGround_High for future use
+*BattleGround_High*
+
+# Resources
+Resources/*
+
