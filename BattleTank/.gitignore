@@ -86,3 +86,6 @@ Content/StarterContent/*
 # Resources
 Resources/*
 
+# WindowsNoEditor (contain packages)
+WindowsNoEditor/*
+
