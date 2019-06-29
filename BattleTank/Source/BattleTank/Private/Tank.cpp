@@ -18,6 +18,12 @@ void ATank::BeginPlay()
 	
 }
 
+// Return location of this tank
+FVector ATank::GetTankLocation() const
+{
+	return GetActorLocation();
+}
+
 // Called every frame
 void ATank::Tick(float DeltaTime)
 {
@@ -32,3 +38,8 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void ATank::AimAt(FVector HitLocation)
+{
+	auto TankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *TankName, *HitLocation.ToString());
+}
