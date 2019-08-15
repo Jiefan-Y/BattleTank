@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "TankPlayerController.h"
+#include "Tank.h"
 
 void ATankPlayerController::BeginPlay()
 {
@@ -43,7 +44,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	auto ScreenLocation = FVector2D(ViewportSizeX * CrosshairXLocation,ViewportSizeY * CrosshairYLocation);
 	
 	// De-project the crosshair screen position to a world direction
-	FVector LookDirection;
+	FVector LookDirection(0);
 	if (GetLookDirection(ScreenLocation,LookDirection))
 	{
 		// Line-trace along that direction and see what we hit (up to max range)
@@ -54,7 +55,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation,FVector& LookDirection) const 
 {
-	FVector CameraWorldLocation;
+	FVector CameraWorldLocation(0);
 	return DeprojectScreenPositionToWorld(
 		ScreenLocation.X, 
 		ScreenLocation.Y, 
